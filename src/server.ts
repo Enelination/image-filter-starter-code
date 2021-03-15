@@ -33,7 +33,7 @@ import { filterImageFromURL, deleteLocalFiles } from "./util/util";
     let { image_url } = req.query;
 
     if (!image_url) {
-      res.status(400).send("Error : Empty image url submitted");
+      res.status(400).send("error : no url submited ");
     } else {
       // call filterImageFromURL(image_url) to filter the image
       await filterImageFromURL(image_url)
@@ -45,9 +45,7 @@ import { filterImageFromURL, deleteLocalFiles } from "./util/util";
           });
         })
         .catch(function (err) {
-          res
-            .status(400)
-            .send("The image can not be filtered - check the link submitted ");
+          res.status(400).send("Image not filtered....Check LInk!!!  ");
         });
     }
   });
